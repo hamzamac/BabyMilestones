@@ -1,6 +1,5 @@
 package com.makame.diary.entity;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import lombok.Getter;
-import lombok.Setter;
 
 @Entity
 public class Baby{
