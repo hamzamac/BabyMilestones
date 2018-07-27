@@ -22,7 +22,7 @@ public class Baby{
     private String lastName;
 
     @OneToMany
-    private Set<FirstAction> firstActions = new HashSet<>();
+    private Set<Event> firstActions = new HashSet<>();
 
     public Baby(String firstName,String lastName ) {
  
@@ -30,6 +30,4 @@ public class Baby{
         this.lastName = lastName;
 
     }
-
-    public Baby() {   }
 }
