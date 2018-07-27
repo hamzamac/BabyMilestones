@@ -6,18 +6,21 @@ import javax.persistence.Id;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
+@ToString
 @NoArgsConstructor
 public class Action{
 
     @Id
     @GeneratedValue
 
-    @Getter
+    @Getter @Setter
     private long id;
 
-    @Getter
+    @Getter @Setter
     private String name;
 
     public Action(String name) {
