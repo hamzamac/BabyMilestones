@@ -9,21 +9,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/api/baby")
 public class BabyController{
 
-    private final BabyRepository babyRepository;
+    //private final BabyRepository babyRepository;
 
     @Autowired
-    public BabyController(BabyRepository babyRepository){
-        this.babyRepository = babyRepository;
+    public BabyController(){
+       // this.babyRepository = babyRepository;
     }
 
     @GetMapping
-    Collection<Baby> getBabies(){
-        return (Collection<Baby>) babyRepository.findAll();
+    @ResponseBody
+    String getBabies(){
+        return "hello";
     }
 
 }

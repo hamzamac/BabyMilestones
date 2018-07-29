@@ -1,4 +1,4 @@
-package com.makame.diary.repositories;
+package com.makame.diary.dao;
 
 import java.util.Optional;
 
@@ -8,6 +8,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BabyRepository extends CrudRepository<Baby,Long>{
-    public Optional<Baby> findById(Long id);
+public interface BabyRepository extends CrudRepository<Baby, Long>{
+    Optional<Baby> findById(long id);
 }

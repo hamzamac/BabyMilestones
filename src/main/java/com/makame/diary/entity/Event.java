@@ -3,10 +3,11 @@ package com.makame.diary.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 @Entity
@@ -17,14 +18,18 @@ public class Event{
     @GeneratedValue
     private long id;
 
-    @Getter @Setter
+    @Getter
     private Integer week;
 
-    @Getter @Setter
-    private Action action;
+    @ManyToOne
+    private Baby owner;
 
-    public Event(Integer week, Action action) {
+    @OneToOne
+    @Getter
+    private Action firstTimeAction;
+
+    public Event(Integer week) {
         this.week = week;
-        this.action = action;
+      //  this.action = action;
     }
 }

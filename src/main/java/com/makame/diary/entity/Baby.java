@@ -11,7 +11,6 @@ import javax.persistence.OneToMany;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 @Entity
@@ -22,14 +21,14 @@ public class Baby{
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long Id;
 
-    @Getter @Setter
+    @Getter
     private String firstName;
-    
-    @Getter @Setter
+
+    @Getter
     private String lastName;
 
-    //@OneToMany(mappedBy = )
-    @Getter @Setter
+    @Getter
+    @OneToMany(mappedBy = "owner")
     private Set<Event> events = new HashSet<>();
 
     public Baby(String firstName,String lastName ) {
